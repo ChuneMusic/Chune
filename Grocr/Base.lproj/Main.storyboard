@@ -285,6 +285,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="WRG-qR-ebT" kind="relationship" relationship="viewControllers" id="ZRR-QM-fxe"/>
+                        <segue destination="1qA-r2-x6p" kind="relationship" relationship="viewControllers" id="0FZ-Ld-Vzm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pg6-a5-dfo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -300,7 +301,7 @@
                         <viewControllerLayoutGuide type="bottom" id="a7r-qc-vqz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6jT-Po-wIb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -313,7 +314,6 @@
         <!--Navigation Controller-->
         <scene sceneID="5Ek-Z0-CEa">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="weB-oN-cRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OO3-Em-sDU" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <toolbarItems/>
@@ -335,6 +335,7 @@
                         <segue destination="kqp-ch-p2w" kind="relationship" relationship="rootViewController" id="LJC-Vd-bhE"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="weB-oN-cRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1053" y="399"/>
         </scene>
