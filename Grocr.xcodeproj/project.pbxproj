@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		815AB4782015683A0017638E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 815AB477201568390017638E /* GoogleService-Info.plist */; };
+		0A44DC282028F20600E349CB /* NewsTitleViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A44DC272028F20600E349CB /* NewsTitleViewViewController.swift */; };
+		0A44DC2A2028FC0100E349CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A44DC292028FC0000E349CB /* GoogleService-Info.plist */; };
 		815AB479201591A80017638E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB2385651B3DD5AB0079CD01 /* Main.storyboard */; };
 		941A68C9047CFC613264BFB7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F599D9265F4B40571F432E78 /* libPods.a */; };
 		BB2385621B3DD5AB0079CD01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2385611B3DD5AB0079CD01 /* AppDelegate.swift */; };
@@ -21,7 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		815AB477201568390017638E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0A44DC272028F20600E349CB /* NewsTitleViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTitleViewViewController.swift; sourceTree = "<group>"; };
+		0A44DC292028FC0000E349CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		815AB47A2016607B0017638E /* Grocr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Grocr.entitlements; sourceTree = "<group>"; };
 		9BA2A2DB5BA4733818152B9B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A898E3AE11425E4495FAC93A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,7 +100,7 @@
 		BB23855F1B3DD5AB0079CD01 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				815AB477201568390017638E /* GoogleService-Info.plist */,
+				0A44DC292028FC0000E349CB /* GoogleService-Info.plist */,
 				BB2385601B3DD5AB0079CD01 /* Info.plist */,
 				BB2385851B3DD8820079CD01 /* Grocr-Bridging-Header.h */,
 			);
@@ -108,6 +110,7 @@
 		BB2385811B3DD8310079CD01 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0A44DC272028F20600E349CB /* NewsTitleViewViewController.swift */,
 				BB2385631B3DD5AB0079CD01 /* LoginViewController.swift */,
 				BB2385831B3DD8660079CD01 /* ArtistListTableViewController.swift */,
 				BB30CD491B439B60004B3177 /* OnlineUsersTableViewController.swift */,
@@ -220,8 +223,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				815AB4782015683A0017638E /* GoogleService-Info.plist in Resources */,
 				BB23856C1B3DD5AB0079CD01 /* LaunchScreen.xib in Resources */,
+				0A44DC2A2028FC0100E349CB /* GoogleService-Info.plist in Resources */,
 				BB2385691B3DD5AB0079CD01 /* Images.xcassets in Resources */,
 				815AB479201591A80017638E /* Main.storyboard in Resources */,
 			);
@@ -285,6 +288,7 @@
 				BB2385641B3DD5AB0079CD01 /* LoginViewController.swift in Sources */,
 				BB2385841B3DD8660079CD01 /* ArtistListTableViewController.swift in Sources */,
 				BB23858A1B3DD9640079CD01 /* GroceryItem.swift in Sources */,
+				0A44DC282028F20600E349CB /* NewsTitleViewViewController.swift in Sources */,
 				BB30CD4A1B439B60004B3177 /* OnlineUsersTableViewController.swift in Sources */,
 				BB7DA5111B42C8100018B530 /* User.swift in Sources */,
 				BB2385621B3DD5AB0079CD01 /* AppDelegate.swift in Sources */,
