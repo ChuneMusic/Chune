@@ -7,10 +7,12 @@
 //
 
 import UIKit
-var list = [String] ()
-var articles = [String]()
-var myIndex = 0
+
 class NewsTitleViewViewController: UITableViewController {
+  var list = [String] ()
+  var imgs = [UIImage] ()
+  var articles = [String]()
+  var myIndex = 0
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return(list.count)
   }
@@ -18,6 +20,7 @@ class NewsTitleViewViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell1")
     cell.textLabel?.text = list[indexPath.row]
+    cell.imageView?.image = imgs[indexPath.row]
     return cell
   }
   
@@ -47,6 +50,8 @@ class NewsTitleViewViewController: UITableViewController {
 //      }
 //
       list = ["test1", "test2", "test3"]
+      imgs = [UIImage(named: "/Users/echo/Desktop/Chune/other_files/place_holder.png")!,      UIImage(named: "/Users/echo/Desktop/Chune/other_files/place_holder.png")!,
+              UIImage(named: "/Users/echo/Desktop/Chune/other_files/place_holder.png")!]
     }
 
     override func didReceiveMemoryWarning() {
