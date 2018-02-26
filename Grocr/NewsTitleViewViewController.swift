@@ -10,12 +10,12 @@ import UIKit
 var list = [String] ()
 var articles = [String]()
 var myIndex = 0
-class NewsTitleViewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+class NewsTitleViewViewController: UITableViewController {
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return(list.count)
   }
   
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell1")
     cell.textLabel?.text = list[indexPath.row]
     return cell
@@ -31,22 +31,22 @@ class NewsTitleViewViewController: UIViewController, UITableViewDelegate, UITabl
 
     override func viewDidLoad() {
       super.viewDidLoad()
-      let request = URLRequest(url: NSURL(string: "some url")! as URL)
-      do{
-        let response: AutoreleasingUnsafeMutablePointer<URLResponse?>? = nil
-        let data = try NSURLConnection.sendSynchronousRequest(request, returning: response)
-        
-        let jsonSerialized = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-        
-        if let json = jsonSerialized, let news = json["news"]{
-          list = news as! [String]
-        }
-      }
-      catch {
-        print("Error")
-      }
-      
-
+//      let request = URLRequest(url: NSURL(string: "some url")! as URL)
+//      do{
+//        let response: AutoreleasingUnsafeMutablePointer<URLResponse?>? = nil
+//        let data = try NSURLConnection.sendSynchronousRequest(request, returning: response)
+//
+//        let jsonSerialized = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+//
+//        if let json = jsonSerialized, let news = json["news"]{
+//          list = news as! [String]
+//        }
+//      }
+//      catch {
+//        print("Error")
+//      }
+//
+      list = ["test1", "test2", "test3"]
     }
 
     override func didReceiveMemoryWarning() {
