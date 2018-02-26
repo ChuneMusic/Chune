@@ -34,6 +34,8 @@ class GroceryListTableViewController: UITableViewController {
   var user: User!
   var userCountBarButtonItem: UIBarButtonItem!
   
+  var temp_name = [String]()
+  var temp_user = [String]()
   // MARK: UIViewController Lifecycle
   
   override func viewDidLoad() {
@@ -80,17 +82,28 @@ class GroceryListTableViewController: UITableViewController {
   // MARK: UITableView Delegate methods
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return items.count
+    for (index, _) in items.enumerated() {
+      if self.user.email == items[index].addedByUser {
+        temp_name.append(items[index].name)
+        temp_user.append(items[index].addedByUser)
+      }
+    }
+//    return items.count
+    return temp_name.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
-    let groceryItem = items[indexPath.row]
+//    let groceryItem = items[indexPath.row]
+    let names = temp_name[indexPath.row]
+    let users = temp_user[indexPath.row]
     
-    cell.textLabel?.text = groceryItem.name
-    cell.detailTextLabel?.text = groceryItem.addedByUser
     
-    toggleCellCheckbox(cell, isCompleted: groceryItem.completed)
+//    cell.textLabel?.text = groceryItem.name
+//    cell.detailTextLabel?.text = groceryItem.addedByUser
+    cell.textLabel?.text = names;
+    cell.detailTextLabel?.text = users;
+//    toggleCellCheckbox(cell, isCompleted: groceryItem.completed)
     
     return cell
   }
@@ -106,33 +119,33 @@ class GroceryListTableViewController: UITableViewController {
     }
   }
   
-  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    guard let cell = tableView.cellForRow(at: indexPath) else { return }
-    let groceryItem = items[indexPath.row]
-    let toggledCompletion = !groceryItem.completed
-    toggleCellCheckbox(cell, isCompleted: toggledCompletion)
-    groceryItem.ref?.updateChildValues([
-      "completed": toggledCompletion
-      ])
-  }
+//  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//    guard let cell = tableView.cellForRow(at: indexPath) else { return }
+//    let groceryItem = items[indexPath.row]
+//    let toggledCompletion = !groceryItem.completed
+//    toggleCellCheckbox(cell, isCompleted: toggledCompletion)
+//    groceryItem.ref?.updateChildValues([
+//      "completed": toggledCompletion
+//      ])
+//  }
   
-  func toggleCellCheckbox(_ cell: UITableViewCell, isCompleted: Bool) {
-    if !isCompleted {
-      cell.accessoryType = .none
-      cell.textLabel?.textColor = UIColor.black
-      cell.detailTextLabel?.textColor = UIColor.black
-    } else {
-      cell.accessoryType = .checkmark
-      cell.textLabel?.textColor = UIColor.gray
-      cell.detailTextLabel?.textColor = UIColor.gray
-    }
-  }
+//  func toggleCellCheckbox(_ cell: UITableViewCell, isCompleted: Bool) {
+//    if !isCompleted {
+//      cell.accessoryType = .none
+//      cell.textLabel?.textColor = UIColor.black
+//      cell.detailTextLabel?.textColor = UIColor.black
+//    } else {
+//      cell.accessoryType = .checkmark
+//      cell.textLabel?.textColor = UIColor.gray
+//      cell.detailTextLabel?.textColor = UIColor.gray
+//    }
+//  }
   
   // MARK: Add Item
   
   @IBAction func addButtonDidTouch(_ sender: AnyObject) {
-    let alert = UIAlertController(title: "Grocery Item",
-                                  message: "Add an Item",
+    let alert = UIAlertController(title: "Artist",
+                                  message: "Add an artist",
                                   preferredStyle: .alert)
     
     let saveAction = UIAlertAction(title: "Save",
