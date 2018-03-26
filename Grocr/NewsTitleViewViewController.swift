@@ -13,6 +13,7 @@ class NewsTitleViewViewController: UITableViewController {
   var imgs = [UIImage] ()
   var articles = [String]()
   var myIndex = 0
+  var urlToSend = ""
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return(list.count)
   }
@@ -22,6 +23,22 @@ class NewsTitleViewViewController: UITableViewController {
     cell.textLabel?.text = list[indexPath.row]
     cell.imageView?.image = imgs[indexPath.row]
     return cell
+  }
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+    myIndex = indexPath.row
+    urlToSend = articles[myIndex]
+    DispatchQueue.main.async {
+      self.performSegue(withIdentifier:"new_to_browser", sender: self)
+    }
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "new_to_browser" {
+      if let destinationVC = segue.destination as? Browser {
+        destinationVC.myUrl = urlToSend
+      }
+    }
   }
   
 //  func tableVIew(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
@@ -52,6 +69,7 @@ class NewsTitleViewViewController: UITableViewController {
       list = ["test1", "test2", "test3"]
       imgs = [UIImage(named: "/Users/echo/Desktop/Chune/other_files/place_holder.png")!,      UIImage(named: "/Users/echo/Desktop/Chune/other_files/place_holder.png")!,
               UIImage(named: "/Users/echo/Desktop/Chune/other_files/place_holder.png")!]
+      articles = ["https://www.billboard.com/", "https://www.billboard.com/articles/business/8260913/mike-oneill-bmi-doj-consent-decree-expires-licensing-oped", "https://www.billboard.com/news"]
     }
 
     override func didReceiveMemoryWarning() {

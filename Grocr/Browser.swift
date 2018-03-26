@@ -10,10 +10,17 @@ import UIKit
 
 class Browser: UIViewController {
 
+    var myUrl = ""
+   
+    @IBOutlet weak var webView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+      print("testing")
+//        let url = NSURL (string: "https://google.com");
+      let url = NSURL (string: myUrl);
+      let request = NSURLRequest(url: url! as URL);
+        webView.loadRequest(request as URLRequest);
     }
 
     override func didReceiveMemoryWarning() {
