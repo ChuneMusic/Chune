@@ -57,7 +57,7 @@ class GroceryListTableViewController: UITableViewController {
         self.userCountBarButtonItem?.title = "0"
       }
     })
-    
+
     ref.queryOrdered(byChild: "completed").observe(.value, with: { snapshot in
       var newItems: [GroceryItem] = []
       
@@ -82,6 +82,8 @@ class GroceryListTableViewController: UITableViewController {
   // MARK: UITableView Delegate methods
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    temp_name = [String]()
+    temp_user = [String]()
     for (index, _) in items.enumerated() {
       if self.user.email == items[index].addedByUser {
         temp_name.append(items[index].name)
